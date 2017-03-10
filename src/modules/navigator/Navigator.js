@@ -1,6 +1,8 @@
 import {Platform} from 'react-native';
 import {TabNavigator, StackNavigator} from 'react-navigation';
 
+import {Header} from 'react-navigation-native-base';
+
 import CounterViewContainer from '../counter/CounterViewContainer';
 import ColorViewContainer from '../colors/ColorViewContainer';
 
@@ -20,16 +22,19 @@ export const MainScreenNavigator = TabNavigator({
         style: {backgroundColor: headerColor}
       }
     })
+  },
+  header: {
+    style: {
+      elevation: 0
+    }
   }
 });
 
 MainScreenNavigator.navigationOptions = {
-  title: 'Pepperoni App Template',
+  title: 'Pepperoni',
   header: {
-    titleStyle: {color: 'white'},
     style: {
-      backgroundColor: headerColor,
-      elevation: 0 // disable header elevation when TabNavigator visible
+      elevation: 0 // disable elevation when TabNavigator visible
     }
   }
 };
@@ -38,6 +43,8 @@ MainScreenNavigator.navigationOptions = {
 const AppNavigator = StackNavigator({
   Home: {screen: MainScreenNavigator},
   InfiniteColorStack: {screen: ColorViewContainer}
+}, {
+  headerComponent: Header
 });
 
 export default AppNavigator;
