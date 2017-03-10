@@ -29,7 +29,9 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["<rootDir>/test/setup.js"],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation)"
     ]
@@ -41,6 +43,7 @@
     "immutable": "^3.7.6",
     "lodash": "^4.11.0",
     "moment": "^2.12.0",
+    "native-base": "^2.0.12",
     "react": "~15.4.2",
     "react-dom": "~15.4.2",
     "react-native": "0.41.2",
